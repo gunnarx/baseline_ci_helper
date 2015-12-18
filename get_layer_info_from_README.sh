@@ -20,12 +20,6 @@ fail() {
    exit 1
 }
 
-print_multiline() {
-   cat <<EOT
-$1
-EOT
-}
-
 sanity_check_num_lines() {
    what=$1 ; min=$2 ; max=$3
 
