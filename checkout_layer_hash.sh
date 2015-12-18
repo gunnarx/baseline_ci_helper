@@ -11,18 +11,19 @@ fail() {
 layer=$1
 [ -z "$layer" ] && fail "No layer name given"
 
-# cd to same directory as this script, to find the other script
+# Store the location of these scripts
 MYDIR=$(dirname "$0")
 cd "$MYDIR"
-MYDIR=$PWD
+MYDIR="$PWD"
 
-# Extract revision from readme
-revision=$(./get_layer_info_from_README.sh $layer revision)
+# Extract revision from README in meta-ivi
+cd "$MYDIR/../meta-ivi" || fail "Can't cd to meta-ivi directory"
+revision=$($MYDIR/get_layer_info_from_README.sh $layer revision)
 
-# Fail if could not fetch revision
-[ -z "$revision" ] && fail "Fetched revision was empty"
+# Fail if we could not fetch revision
+[ -z "$revision" ] && fail "Revision extracted from README was empty"
 
 # Checkout the right revision in this layer
-cd $layer || fail "Can't cd to layer directory ($layer)"
+cd "$MYDIR/../$layer" || fail "Can't cd to layer directory ($layer)"
 git checkout $revision
 
