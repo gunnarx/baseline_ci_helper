@@ -2,6 +2,10 @@
 # (C) Gunnar Andersson 2015-12-12
 # License: GPLv2
 
+# This fetches information about layer dependencies
+# as documented in meta-ivi README.
+# revision, branch name, or sub layer name can be extracted
+
 README=README.md
 DEBUG=false
 
@@ -23,10 +27,9 @@ EOT
 }
 
 sanity_check_num_lines() {
-   what=$1
-   min=$2
-   max=$3
-   numlines="$(wc -l)" # < Note this reads from stdin
+   what=$1 ; min=$2 ; max=$3
+
+   numlines="$(wc -l)" # < Reads from stdin
 
    if [ $numlines -lt $min ] ; then 
       fail "Sanity check: It looks like section $what has $numlines lines, and that is not enough.  Please check what is wrong."
