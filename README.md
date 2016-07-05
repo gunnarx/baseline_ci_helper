@@ -6,8 +6,7 @@ Normally this project would be cloned into a directory that is in parallel
 with meta-ivi but its location doesn't really matter.
 
 Because to run it you should use the meta-ivi directory as working directory
-and then run the script from there.  It will search for README.md from
-meta-ivi in the current working directory.
+and then run the script from there.  It will search for README.md there.
 
 For example, if the directories are in parallel:
 

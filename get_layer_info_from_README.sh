@@ -15,7 +15,7 @@ what=$2
 [ -z "$layer" -o -z "$what" ] && { echo "Usage: $0 <layername> <branch|revision>" ; exit 1 ; }
 
 fail() {
-   echo "FAILED."
+   echo "*** FAILED ***"
    [ -n "$1" ] && echo "Message: " $@
    exit 1
 }
@@ -44,6 +44,10 @@ dependency_section=$( <$README \
 # Debug printouts...
 $DEBUG && echo "OK, found the following layer info in dependency section:"
 $DEBUG && cat <<EOT
+$dependency_section
+EOT
+
+cat <<EOT | sanity_check_num_lines "Layer Dependencies Section" 6 20
 $dependency_section
 EOT
 
