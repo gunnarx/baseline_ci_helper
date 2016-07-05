@@ -1,7 +1,0 @@
-These scripts extract the revision information for dependent layers (poky
-and meta-openembedded) from the README of meta-ivi so that automated builds
-are possible.
-
-This project shall be cloned into a directory that is in parallel with
-meta-ivi in your file system -- i.e. it will try to reference 
-../meta-ivi relative to its own directory.
