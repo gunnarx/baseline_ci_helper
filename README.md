@@ -14,6 +14,12 @@ For example, if the directories are in parallel:
 $ cd meta-ivi
 $ ../baseline_ci_helper/get_layer_info_from_README.sh poky revision
 ```
+That should return the commit hash specified for poky.
 
-This should return the commit hash specified for poky.
-
+General usage:
+```
+$ get_layer_info_from_README.sh <layer> [branch|revision]
+or
+$ checkout_layer_hash.sh <layer>
+```
+where \<layer\> is typically poky, meta-openembedded, or similar
