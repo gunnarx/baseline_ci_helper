@@ -1,6 +1,6 @@
 #!/bin/sh
 # (C) Gunnar Andersson 2015-12-12
-# License: GPLv2
+# License: MPLv2
 
 # This fetches information about layer dependencies
 # as documented in meta-ivi README.
