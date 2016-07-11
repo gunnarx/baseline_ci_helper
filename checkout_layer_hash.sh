@@ -1,6 +1,6 @@
 #!/bin/sh
 # (C) 2015-12-12 Gunnar Andersson
-# License: GPLv2
+# License: MPLv2
 
 fail() {
    echo "FAILED."
